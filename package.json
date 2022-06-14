@@ -1,0 +1,21 @@
+{
+  "name": "lenguajes-spreadsheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "branch": "wiki.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Agustin Saravia",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "google-spreadsheet": "^3.3.0",
+    "wikipedia": "^1.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
