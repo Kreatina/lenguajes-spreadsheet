@@ -1,17 +1,14 @@
 const {
     getSheet
 } = require("./sheets");
+
 const fetch = require('node-fetch')
-const {
-    getWikiData
-} = require('./wiki');
+
 const wdk = require('wikidata-sdk');
-const wbk = require('wikibase-sdk');
+const { GoogleSpreadsheetRow, GoogleSpreadsheet } = require("google-spreadsheet");
 
 
 (async function () {
-
-
     const sheet = await getSheet();
     const rows = await sheet.getRows();
     for (row of rows) {
@@ -27,7 +24,6 @@ const wbk = require('wikibase-sdk');
             haswbstatement: 'P31=Q34770',
         }
         const url = await wdk.cirrusSearchPages(searchConfig)
-        console.log(url)
         const data = await fetch(url, {
             headers: {
                 'User-Agent': 'WikiSheetsBot/0.1'
@@ -35,10 +31,15 @@ const wbk = require('wikibase-sdk');
         })
         .then(res => res.json())
         
-        console.log(data.query.search)
         
-
+        const fetchedData = data.query.search
+        // console.log(fetchedData)
+        fetchedData.filter(prop =>{
+            const titles = prop.title
+            console.log(titles)
+         
+        })
+       
     }
-    // console.log(sheet)
 
 }());
