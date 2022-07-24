@@ -1,10 +1,11 @@
-
-const {GoogleSpreadsheet} = require('google-spreadsheet')
+const {
+    GoogleSpreadsheet
+} = require('google-spreadsheet')
 const creds = require('./client_secret.json');
 
- const getSheet = async ()=>{
-    
-    const doc = new GoogleSpreadsheet('1iEAntS4gM308YhkGsPS0X_znCwjWC4q2Cl6GVDYo2hA');
+const getSheet = async () => {
+
+    const doc = new GoogleSpreadsheet('1PqSVi0uqcw7kLK3_9RECCcWYg4zr_sXntwcrZc4m72c'); 
 
     await doc.useServiceAccountAuth(creds);
 
@@ -12,6 +13,26 @@ const creds = require('./client_secret.json');
 
     const sheet = doc.sheetsByIndex[0];
     return sheet
-
 }
-module.exports = {getSheet}
+
+
+
+
+
+module.exports = {
+    getSheet
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
